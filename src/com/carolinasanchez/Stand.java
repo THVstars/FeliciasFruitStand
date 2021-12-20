@@ -36,4 +36,9 @@ public class Stand { // class variables
     public void setInventoryList_(ArrayList<Integer> inventoryList_) {
         this.inventoryList_ = inventoryList_;
     }
+
+    //create two methods.
+    //they're both going to be to change inventory
+    //one takes in a name of a fruit and adds inventory when felicia gets stock.
+    //one takes in a name of a fruit and how many she's selling and subtracts that number.
 }
