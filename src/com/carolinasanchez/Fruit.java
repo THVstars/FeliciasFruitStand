@@ -3,10 +3,12 @@ package com.carolinasanchez;
 public class Fruit {
     private String name;
     private double price;
+    private int inventory;
 
-    public Fruit(String name, double price) {
+    public Fruit(String name, double price, int inventory) {
         this.name = name;
         this.price = price;
+        this.inventory = inventory;
     }
 
     public String getName() {
@@ -25,9 +27,16 @@ public class Fruit {
         this.price = price;
     }
 
+    public int getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int inventory) {
+        this.inventory = inventory;
+    }
+
     @Override
     public String toString() {
-        System.out.println("This is an " + this.name + " and it costs " + this.price + ".");
-        return "This is a " + this.name + " and it costs" + this.price + ".";
+        return "This is a " + this.name + " and it costs " + this.price + ". There are " + this.inventory + " left.";
     }
 }

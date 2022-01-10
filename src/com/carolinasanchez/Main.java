@@ -14,17 +14,19 @@ public class Main {
     static int remainder;
 
     public static void main(String[] args) {
-        apple = new Fruit("apple", 1.29);
-        orange = new Fruit("orange", 1.50);
-        banana = new Fruit("banana", 20.00);
+        apple = new Fruit("apple", 1.50, 5);
+        orange = new Fruit("orange", 1.50, 9);
+        banana = new Fruit("banana", 20.00, 10);
+
+        System.out.println(apple.toString());
 
         feliciasFruitList.add(apple);
         feliciasFruitList.add(orange);
         feliciasFruitList.add(banana);
 
-        feliciasInventory.add(20);
-        feliciasInventory.add(27);
-        feliciasInventory.add(33);
+        feliciasInventory.add(apple.getInventory());
+        feliciasInventory.add(orange.getInventory());
+        feliciasInventory.add(banana.getInventory());
 
         fruitStand = new Stand("Felicia's Fruit Stand", feliciasFruitList, feliciasInventory);
 
@@ -50,6 +52,10 @@ public class Main {
             if (fruitName.equals(feliciasFruitList.get(i).getName())) {
                 sum = feliciasInventory.get(i) + fruitAddInventory;
                 feliciasInventory.set(i, sum);
+                apple.setInventory(feliciasInventory.get(0));
+                orange.setInventory(feliciasInventory.get(1));
+                banana.setInventory(feliciasInventory.get(2));
+                System.out.println(orange.getInventory()); // prints before the array because it prints before the return.
                 //System.out.println(i);
             }
         } return feliciasInventory;
@@ -69,6 +75,10 @@ public class Main {
             if (fruitName.equals(feliciasFruitList.get(i).getName())) {
                 remainder = feliciasInventory.get(i) - fruitRemoveInventory;
                 feliciasInventory.set(i, remainder);
+                apple.setInventory(feliciasInventory.get(0));
+                orange.setInventory(feliciasInventory.get(1));
+                banana.setInventory(feliciasInventory.get(2));
+                System.out.println(orange.getInventory());
                 //System.out.println(i);
             }
         }
